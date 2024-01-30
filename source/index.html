@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="En">
+@include('partials/head.html')
+
+<body>
+  <section class="calculator">
+    <div class="container">
+      <div class="calculator__wrapp">
+        <h1>MED test</h1>
+
+        <div class="calculator__box">
+          <div class="calculator__info">
+            <div class="calculator__product">
+              <div class="calculator__head">Product</div>
+
+              <div class="calculator__select select">
+                <div class="calculator__select-header select__header">
+                  <span class="calculator__select-current select__current">
+                    Choose product
+                  </span>
+                </div>
+
+                <ul class="calculator__select-body select__body">
+                  <li class="calculator__select-item select__item" data-choice='choosen' data->Pro</li>
+                  <li class="calculator__select-item select__item" data-choice='choosen'>Pro Max</li>
+                  <li class="calculator__select-item select__item" data-choice='choosen'>Wood's Lamp</li>
+                  <li class="calculator__select-item select__item" data-choice='choosen'>Excimer Lazer</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="calculator__skin">
+              <div class="calculator__head">Skin type</div>
+
+              <div class="calculator__select select">
+                <div class="calculator__select-header select__header">
+                  <span class="calculator__select-current select__current">
+                    Skin types
+                  </span>
+                </div>
+
+                <ul class="calculator__select-body select__body">
+                  <li class="calculator__select-item select__item" data-choice='choosen'>I</li>
+                  <li class="calculator__select-item select__item" data-choice='choosen'>II</li>
+                  <li class="calculator__select-item select__item" data-choice='choosen'>III</li>
+                  <li class="calculator__select-item select__item" data-choice='choosen'>IV</li>
+                  <li class="calculator__select-item select__item" data-choice='choosen'>V</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <button>Calculate</button>
+
+          <ul class="calculator__result">
+            <li>a = <span>1</span></li>
+            <li>b = <span>2</span></li>
+            <li>c = <span>3</span></li>
+            <li>d = <span>4</span></li>
+            <li>e = <span>5</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>

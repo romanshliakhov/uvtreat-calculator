@@ -1,0 +1,49 @@
+.show {
+  display: flex;
+  align-items: center;
+  grid-gap: 7px;
+  margin-right: 40px;
+
+
+  &__select-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 10px;
+    height: 100%;
+    background-color: var(--white);
+    border-radius: 10px;
+    cursor: pointer;
+
+    svg {
+      transform: rotate(-90deg);
+      fill: var(--green);
+    }
+  }
+
+  &__select-body {
+    display: none;
+    bottom: 50px;
+    flex-direction: column;
+    grid-gap: 3px;
+    width: 70px;
+    padding: 10px 0;
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(212, 212, 212, 0.64);
+  }
+
+  &__select-item {
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(100, 182, 172, 0.3);
+      color: var(--green);
+    }
+  }
+}
