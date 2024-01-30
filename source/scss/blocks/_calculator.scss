@@ -27,7 +27,7 @@
     grid-gap: 100px;
   }
 
-  button {
+  &__btn {
     padding: 10px 30px;
     width: fit-content;
     position: relative;
@@ -52,12 +52,24 @@
     }
   }
 
-  &__result {
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-gap: 20px;
+  }
+
+  &__results {
     width: max-content;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 30px;
-    font-weight: 700;
+    font-weight: 500;
+
+    span {
+      font-weight: 700;
+      color: var(--color-blue);
+    }
   }
 
   &__product,
@@ -92,11 +104,11 @@
     align-items: center;
     justify-content: center;
     grid-gap: 10px;
-    height: 100%;
     background-color: var(--color-white);
     border-radius: 10px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 22px;
+    line-height: 110%;
   }
 
   &__select-current {

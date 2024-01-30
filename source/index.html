@@ -15,50 +15,55 @@
 
               <div class="calculator__select select">
                 <div class="calculator__select-header select__header">
-                  <span class="calculator__select-current select__current">
+                  <span class="calculator__select-current select__current calculator-product">
                     Choose product
                   </span>
                 </div>
 
                 <ul class="calculator__select-body select__body">
-                  <li class="calculator__select-item select__item" data-choice='choosen' data->Pro</li>
-                  <li class="calculator__select-item select__item" data-choice='choosen'>Pro Max</li>
-                  <li class="calculator__select-item select__item" data-choice='choosen'>Wood's Lamp</li>
-                  <li class="calculator__select-item select__item" data-choice='choosen'>Excimer Lazer</li>
+                  <li class="calculator__select-item select__item" data-choice='choosen' data-intencity="7">Pro</li>
+                  <li class="calculator__select-item select__item" data-choice='choosen' data-intencity="7">Pro Max</li>
+                  <li class="calculator__select-item select__item" data-choice='choosen' data-intencity="7.2">Wood's Lamp</li>
+                  <li class="calculator__select-item select__item" data-choice='choosen' data-intencity="40">Excimer Lazer</li>
                 </ul>
               </div>
             </div>
 
             <div class="calculator__skin">
-              <div class="calculator__head">Skin type</div>
+              <div class="calculator__head">Skin types</div>
 
               <div class="calculator__select select">
                 <div class="calculator__select-header select__header">
-                  <span class="calculator__select-current select__current">
-                    Skin types
+                  <span class="calculator__select-current select__current skin-type">
+                    Your type
                   </span>
                 </div>
 
                 <ul class="calculator__select-body select__body">
-                  <li class="calculator__select-item select__item" data-choice='choosen'>I</li>
-                  <li class="calculator__select-item select__item" data-choice='choosen'>II</li>
-                  <li class="calculator__select-item select__item" data-choice='choosen'>III</li>
-                  <li class="calculator__select-item select__item" data-choice='choosen'>IV</li>
-                  <li class="calculator__select-item select__item" data-choice='choosen'>V</li>
+                  <li class="calculator__select-item select__item" data-choice='choosen' data-sequence-a="0.4" data-sequence-b="0.32" data-sequence-c="0.24" data-sequence-d="0.16" data-sequence-e="0.08">I</li>
+                  <li class="calculator__select-item select__item" data-choice='choosen' data-sequence-a="0.65" data-sequence-b="0.52" data-sequence-c="0.39" data-sequence-d="0.26" data-sequence-e="0.13">II</li>
+                  <li class="calculator__select-item select__item" data-choice='choosen' data-sequence-a="0.9" data-sequence-b="0.72" data-sequence-c="0.54" data-sequence-d="0.36" data-sequence-e="0.18">III</li>
+                  <li class="calculator__select-item select__item" data-choice='choosen' data-sequence-a="1.2" data-sequence-b="0.96" data-sequence-c="0.72" data-sequence-d="0.48" data-sequence-e="0.24">IV</li>
+                  <li class="calculator__select-item select__item" data-choice='choosen' data-sequence-a="1.5" data-sequence-b="1.2" data-sequence-c="0.9" data-sequence-d="0.6" data-sequence-e="0.3">V</li>
+                  <li class="calculator__select-item select__item" data-choice='choosen' data-sequence-a="1.6" data-sequence-b="1.28" data-sequence-c="0.96" data-sequence-d="0.64" data-sequence-e="0.32">VI</li>
                 </ul>
               </div>
             </div>
           </div>
 
-          <button>Calculate</button>
+          <button class="calculator__btn">Calculate</button>
 
-          <ul class="calculator__result">
-            <li>a = <span>1</span></li>
-            <li>b = <span>2</span></li>
-            <li>c = <span>3</span></li>
-            <li>d = <span>4</span></li>
-            <li>e = <span>5</span></li>
-          </ul>
+          <div class="calculator__bottom">
+            <div class="calculator__head">Results</div>
+
+            <ul class="calculator__results">
+              <li>Hole sequance a = <span class="result-a">1</span></li>
+              <li>Hole sequance b = <span class="result-b">2</span></li>
+              <li>Hole sequance c = <span class="result-c">3</span></li>
+              <li>Hole sequance d = <span class="result-d">4</span></li>
+              <li>Hole sequance e = <span class="result-e">5</span></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
