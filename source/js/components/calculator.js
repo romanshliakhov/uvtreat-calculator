@@ -5,6 +5,16 @@ const resultC = document.querySelector('.result-c');
 const resultD = document.querySelector('.result-d');
 const resultE = document.querySelector('.result-e');
 
+function secondsToTime(seconds) {
+  const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = seconds % 60;
+
+  const formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
+  const formattedSeconds = remainingSeconds < 10 ? '0' + remainingSeconds : remainingSeconds;
+
+  return formattedMinutes + ':' + formattedSeconds;
+}
+
 const calculate = function(){
   const activeProduct = document.querySelector('.calculator-product').getAttribute('data-intencity');
   const activeSkinTypeA = document.querySelector('.skin-type').getAttribute('data-sequence-a');
@@ -33,19 +43,13 @@ const calculate = function(){
   calculateD = Math.round(skinTypeD * 1000 / productIntencity);
   calculateE = Math.round(skinTypeE * 1000 / productIntencity);
 
-  resultA.innerText = calculateA;
-  resultB.innerText = calculateB;
-  resultC.innerText = calculateC;
-  resultD.innerText = calculateD;
-  resultE.innerText = calculateE;
+  calculateA
 
-
-  // console.log(calculateA);
-  // console.log(calculateB);
-  // console.log(calculateC);
-  // console.log(calculateD);
-  // console.log(calculateE);
-
+  resultA.innerText = secondsToTime(calculateA);
+  resultB.innerText = secondsToTime(calculateB);
+  resultC.innerText = secondsToTime(calculateC);
+  resultD.innerText = secondsToTime(calculateD);
+  resultE.innerText = secondsToTime(calculateE);
 };
 
 calculateBtn.addEventListener('click', () => {

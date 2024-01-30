@@ -9,6 +9,10 @@
     flex-direction: column;
     align-items: center;
     grid-gap: 100px;
+
+    @media screen and (max-width: 767px) {
+      grid-gap: 50px;
+    }
   }
 
   &__box {
@@ -25,6 +29,11 @@
     align-items: center;
     justify-content: center;
     grid-gap: 100px;
+
+    @media screen and (max-width: 767px) {
+      flex-direction: column;
+      grid-gap: 50px;
+    }
   }
 
   &__btn {
@@ -69,6 +78,10 @@
     span {
       font-weight: 700;
       color: var(--color-blue);
+    }
+
+    @media screen and (max-width: 1240px) {
+      grid-template-columns: 100%;
     }
   }
 
