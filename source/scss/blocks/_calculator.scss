@@ -103,14 +103,10 @@
 
   &__results {
     width: max-content;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    display: flex;
+    flex-direction: column;
     grid-gap: 10px;
     font-weight: 500;
-
-    @media screen and (max-width: 1240px) {
-      grid-template-columns: 100%;
-    }
   }
 
   &__result {
