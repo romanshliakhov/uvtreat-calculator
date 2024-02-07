@@ -15,35 +15,24 @@ function secondsToTime(seconds) {
   return formattedMinutes + ':' + formattedSeconds;
 }
 
-const calculate = function(){
-  const activeProduct = document.querySelector('.calculator-product').getAttribute('data-intencity');
-  const activeSkinTypeA = document.querySelector('.skin-type').getAttribute('data-sequence-a');
-  const activeSkinTypeB = document.querySelector('.skin-type').getAttribute('data-sequence-b');
-  const activeSkinTypeC = document.querySelector('.skin-type').getAttribute('data-sequence-c');
-  const activeSkinTypeD = document.querySelector('.skin-type').getAttribute('data-sequence-d');
-  const activeSkinTypeE = document.querySelector('.skin-type').getAttribute('data-sequence-e');
+const calculate = function() {
+  const activeProduct = parseFloat(document.querySelector('.calculator-product').getAttribute('data-intencity'));
+  const activeSkinTypeA = parseFloat(document.querySelector('.skin-type').getAttribute('data-sequence-a'));
+  const activeSkinTypeB = parseFloat(document.querySelector('.skin-type').getAttribute('data-sequence-b'));
+  const activeSkinTypeC = parseFloat(document.querySelector('.skin-type').getAttribute('data-sequence-c'));
+  const activeSkinTypeD = parseFloat(document.querySelector('.skin-type').getAttribute('data-sequence-d'));
+  const activeSkinTypeE = parseFloat(document.querySelector('.skin-type').getAttribute('data-sequence-e'));
 
-  let productIntencity = activeProduct;
-  let skinTypeA = activeSkinTypeA;
-  let skinTypeB = activeSkinTypeB;
-  let skinTypeC = activeSkinTypeC;
-  let skinTypeD = activeSkinTypeD;
-  let skinTypeE = activeSkinTypeE;
+  // Проверяем, что все значения являются числами
+  if (isNaN(activeProduct) || isNaN(activeSkinTypeA) || isNaN(activeSkinTypeB) || isNaN(activeSkinTypeC) || isNaN(activeSkinTypeD) || isNaN(activeSkinTypeE)) {
+    return;
+  }
 
-  let calculateA;
-  let calculateB;
-  let calculateC;
-  let calculateD;
-  let calculateE;
-
-
-  calculateA = Math.round(skinTypeA * 1000 / productIntencity);
-  calculateB = Math.round(skinTypeB * 1000 / productIntencity);
-  calculateC = Math.round(skinTypeC * 1000 / productIntencity);
-  calculateD = Math.round(skinTypeD * 1000 / productIntencity);
-  calculateE = Math.round(skinTypeE * 1000 / productIntencity);
-
-  calculateA
+  let calculateA = Math.round(activeSkinTypeA * 1000 / activeProduct);
+  let calculateB = Math.round(activeSkinTypeB * 1000 / activeProduct);
+  let calculateC = Math.round(activeSkinTypeC * 1000 / activeProduct);
+  let calculateD = Math.round(activeSkinTypeD * 1000 / activeProduct);
+  let calculateE = Math.round(activeSkinTypeE * 1000 / activeProduct);
 
   resultA.innerText = secondsToTime(calculateA);
   resultB.innerText = secondsToTime(calculateB);
@@ -52,9 +41,60 @@ const calculate = function(){
   resultE.innerText = secondsToTime(calculateE);
 };
 
+const resultOne = document.querySelector('.result-one');
+
+const calculateSingle = function() {
+  const productPowerInput = document.querySelector('.power');
+  const personalDoseInput = document.querySelector('.dose');
+
+  // Проверяем, что введенные значения являются числами
+  const isNumber = (value) => !isNaN(parseFloat(value)) && isFinite(value);
+
+  if (!isNumber(productPowerInput.value) || !isNumber(personalDoseInput.value)) {
+    // Если введенные значения не являются числами, очищаем поле результата и выходим из функции
+    return;
+  }
+
+  // Преобразуем введенные значения в числа
+  const productPower = parseFloat(productPowerInput.value);
+  const personalDose = parseFloat(personalDoseInput.value);
+
+  if (productPower === 0) {
+    // Если productPower равен нулю, выводим сообщение об ошибке и выходим из функции
+    return;
+  }
+
+  // Вычисляем значение calculateOne и выводим его
+  const calculateOne = Math.round(personalDose * 1000 / productPower);
+  resultOne.innerText = secondsToTime(calculateOne);
+};
+
 calculateBtn.addEventListener('click', () => {
   calculate();
+  calculateSingle();
 })
+
+const calculatorBox = document.querySelector('.calculator__info');
+const radioButtons = document.querySelectorAll('input[name="calculator"]');
+const calculatorBtnBox = document.querySelector('.calculator__results-variants');
+
+radioButtons.forEach(radioButton => {
+  radioButton.addEventListener('change', function (e) {
+    if (this.value === 'manual') {
+      calculatorBox.classList.add('manual');
+      calculatorBtnBox.classList.add('manual');
+    } else {
+      calculatorBox.classList.remove('manual');
+      calculatorBtnBox.classList.remove('manual')
+    }
+  });
+});
+
+
+
+
+
+
 
 
 

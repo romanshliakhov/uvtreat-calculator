@@ -8,11 +8,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    grid-gap: 100px;
-
-    @media screen and (max-width: 767px) {
-      grid-gap: 50px;
-    }
+    grid-gap: 50px;
   }
 
   &__box {
@@ -24,15 +20,30 @@
   }
 
   &__info {
-    width: 100%;
+    max-width: 300px;
     display: flex;
     align-items: center;
+    flex-direction: column;
     justify-content: center;
-    grid-gap: 100px;
+    grid-gap: 50px;
 
-    @media screen and (max-width: 767px) {
-      flex-direction: column;
-      grid-gap: 50px;
+    label {
+      pointer-events: none;
+    }
+
+    &.manual {
+      label {
+        pointer-events: initial;
+      }
+
+      input {
+        border: 1px solid var(--color-blue);
+        background-color: transparent;
+      }
+
+      .calculator__select {
+        pointer-events: none;
+      }
     }
   }
 
@@ -68,21 +79,42 @@
     grid-gap: 20px;
   }
 
-  &__results {
-    width: max-content;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 30px;
-    font-weight: 500;
+  &__results-variants {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-gap: 20px;
 
     span {
       font-weight: 700;
       color: var(--color-blue);
     }
 
+    &.manual {
+      .calculator__results {
+        display: none;
+      }
+
+      .calculator__result {
+        display: flex;
+      }
+    }
+  }
+
+  &__results {
+    width: max-content;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+    font-weight: 500;
+
     @media screen and (max-width: 1240px) {
       grid-template-columns: 100%;
     }
+  }
+
+  &__result {
+    display: none;
   }
 
   &__product,
@@ -109,6 +141,11 @@
     line-height: 110%;
     color: var(--color-blue);
     font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  &__select {
+    width: 100%;
   }
 
   &__select-header {
@@ -155,4 +192,52 @@
     }
   }
 
+  &__info-devices {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 10px;
+  }
+
+  &__info-numbers {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 10px;
+  }
+
+  &__dose {
+    display: flex;
+    align-items: center;
+    grid-gap: 30px;
+  }
+
+  &__dose-box {
+    width: 100%;
+    text-align: center;
+  }
+
+  &__input {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    background-color: lightgray;
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-gap: 30px;
+  }
+
+  &__choose {
+    display: flex;
+    align-items: center;
+    grid-gap: 10px;
+  }
+
+  &__radio {
+    cursor: pointer;
+  }
 }
